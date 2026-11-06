@@ -12,7 +12,15 @@ The SDK exposes **6 typed methods**, one per documented endpoint, each with a pa
 
 ## Installation
 
-Maven:
+The SDK is not on Maven Central. Build it from source, which installs it in your local Maven repository:
+
+```sh
+git clone https://github.com/huntapi/huntapi-java.git
+cd huntapi-java
+mvn -q install -DskipTests
+```
+
+Then add it to your project. Maven:
 
 ```xml
 <dependency>
@@ -22,7 +30,7 @@ Maven:
 </dependency>
 ```
 
-Gradle:
+Gradle, with `mavenLocal()` in your repositories:
 
 ```kotlin
 implementation("com.huntapi:huntapi:0.1.0")
@@ -150,6 +158,20 @@ HuntApiClient client = HuntApiClient.builder()
 | `stats()` | GET `/v1/stats` | Infrastructure health for an engine or endpoint over the last hour. Not scoped to your account or tenant. Enabled per account: HTTP 403 mea… |
 | `usage()` | GET `/v1/usage` | Retrieve real-time usage statistics and credit balance for your Huntapi account. |
 | `videoDownload()` | GET / POST `/v1/video/download` | Video Download |
+
+## All HuntAPI SDKs
+
+| SDK | Package | Install |
+| --- | --- | --- |
+| Node.js | [`@huntapi/sdk`](https://www.npmjs.com/package/@huntapi/sdk) | `npm install @huntapi/sdk` |
+| Python | [`huntapi`](https://pypi.org/project/huntapi/) | `pip install huntapi` |
+| Go | [`huntapi-go`](https://pkg.go.dev/github.com/huntapi/huntapi-go) | `go get github.com/huntapi/huntapi-go` |
+| .NET | [`HuntApi`](https://www.nuget.org/packages/HuntApi) | `dotnet add package HuntApi` |
+| Ruby | [`huntapi`](https://rubygems.org/gems/huntapi) | `gem install huntapi` |
+| PHP | [`huntapi/sdk`](https://packagist.org/packages/huntapi/sdk) | `composer require huntapi/sdk` |
+| Java | [`huntapi-java`](https://github.com/huntapi/huntapi-java) | build from source, see its README |
+| CLI | [`@huntapi/cli`](https://www.npmjs.com/package/@huntapi/cli) | `npm install -g @huntapi/cli` |
+| MCP server | [`@huntapi/mcp`](https://www.npmjs.com/package/@huntapi/mcp) | `npx -y @huntapi/mcp` |
 
 ## License
 
